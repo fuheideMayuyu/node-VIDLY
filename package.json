@@ -19,6 +19,8 @@
   "homepage": "https://github.com/fuheideMayuyu/node-VIDLY#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "joi": "^13.1.0"
+    "helmet": "^3.20.0",
+    "joi": "^13.1.0",
+    "morgan": "^1.9.1"
   }
 }

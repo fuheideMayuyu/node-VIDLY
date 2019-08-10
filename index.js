@@ -1,3 +1,5 @@
+const helmet = require('helmet');
+const Morgan = require('morgan');
 const Joi = require('joi');
 const express = require('express');
 const app = express();
@@ -7,6 +9,8 @@ const logger = require('./logger')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true})); // key=value&key=value
 app.use(express.static('public')); // 提供静态内容
+app.use(helmet()); // 为express应用提供安全保护
+app.use(Morgan()); // HTTP请求日志记录
 
 app.use(logger)
 
