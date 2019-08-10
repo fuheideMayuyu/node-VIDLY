@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true})); // key=value&key=value
 app.use(express.static('public')); // 提供静态内容
 app.use(helmet()); // 为express应用提供安全保护
-app.use(Morgan()); // HTTP请求日志记录
+app.use(Morgan('tiny')); // HTTP请求日志记录
 
 app.use(logger)
 
