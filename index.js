@@ -5,7 +5,8 @@ const app = express();
 const logger = require('./logger')
 
 app.use(express.json());
-app.use(express.urlencoded()); // key=value&key=value
+app.use(express.urlencoded({ extended: true})); // key=value&key=value
+app.use(express.static('public')); // 提供静态内容
 
 app.use(logger)
 
