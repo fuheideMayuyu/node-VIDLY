@@ -1,0 +1,24 @@
+{
+  "name": "node-VIDLY",
+  "version": "1.0.0",
+  "description": "node练习项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuheideMayuyu/node-VIDLY.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuheideMayuyu/node-VIDLY/issues"
+  },
+  "homepage": "https://github.com/fuheideMayuyu/node-VIDLY#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "joi": "^13.1.0"
+  }
+}
