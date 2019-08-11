@@ -3,14 +3,20 @@ const Morgan = require('morgan');
 const Joi = require('joi');
 const express = require('express');
 const app = express();
-
 const logger = require('./logger')
+
+// process.env.NODE_ENV // 未设置返回undefined
+// console.log('环境', app.get('env'))
+if(app.get('env') === 'development'){
+  app.use(Morgan('tiny')); // HTTP请求日志记录
+  console.log('Morgan enabled...')
+}
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true})); // key=value&key=value
 app.use(express.static('public')); // 提供静态内容
 app.use(helmet()); // 为express应用提供安全保护
-app.use(Morgan('tiny')); // HTTP请求日志记录
+
 
 app.use(logger)
 
