@@ -4,13 +4,18 @@ const Joi = require('joi');
 const express = require('express');
 const app = express();
 const logger = require('./logger')
-
+const config = require('config')
 // process.env.NODE_ENV // 未设置返回undefined
 // console.log('环境', app.get('env'))
 if(app.get('env') === 'development'){
   app.use(Morgan('tiny')); // HTTP请求日志记录
   console.log('Morgan enabled...')
 }
+
+// Configuration
+console.log('Application Name: '+ config.get('name'))
+console.log('Mail Server: '+ config.get('mail.host'))
+console.log('Mail Password: '+ config.get('mail.password'))
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true})); // key=value&key=value
